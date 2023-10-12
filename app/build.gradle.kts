@@ -18,7 +18,7 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "API_KEY", "547ae102e1ae0491794fde0140645abf")
+        buildConfigField("String", "API_KEY", "\"547ae102e1ae0491794fde0140645abf\"")
     }
 
     buildTypes {
@@ -39,6 +39,9 @@ android {
     }
     dataBinding {
         enable = true
+    }
+    buildFeatures {
+        buildConfig = true
     }
 }
 
