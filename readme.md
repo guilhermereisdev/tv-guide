@@ -1,4 +1,4 @@
-# Nome do App
+# TV Guide
 
 Um guia de TV que exibe séries e filmes vinda da API TMDB.
 
