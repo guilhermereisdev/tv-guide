@@ -1,8 +1,11 @@
 package com.guilhermereisdev.tvguide.data.model.movie
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "movies")
 data class Movie(
     @SerializedName("adult")
     val adult: Boolean?,
@@ -10,6 +13,7 @@ data class Movie(
     val backdropPath: String?,
     @SerializedName("genre_ids")
     val genreIds: List<Int>?,
+    @PrimaryKey
     @SerializedName("id")
     val id: Int,
     @SerializedName("original_language")

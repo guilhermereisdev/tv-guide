@@ -1,13 +1,16 @@
 package com.guilhermereisdev.tvguide.data.model.artist
 
-
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "artists")
 data class Artist(
     @SerializedName("adult")
     val adult: Boolean?,
     @SerializedName("gender")
     val gender: Int?,
+    @PrimaryKey
     @SerializedName("id")
     val id: Int,
     @SerializedName("known_for")
