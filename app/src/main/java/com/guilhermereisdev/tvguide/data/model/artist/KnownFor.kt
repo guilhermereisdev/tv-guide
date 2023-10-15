@@ -1,4 +1,4 @@
-package com.guilhermereisdev.tvguide.data.model
+package com.guilhermereisdev.tvguide.data.model.artist
 
 
 import com.google.gson.annotations.SerializedName
