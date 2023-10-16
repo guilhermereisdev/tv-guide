@@ -9,11 +9,11 @@ import com.guilhermereisdev.tvguide.data.model.artist.Artist
 @Dao
 interface ArtistDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveArtists(artists: List<Artist>)
+    fun saveArtists(artists: List<Artist>)
 
     @Query("DELETE FROM artists")
-    suspend fun deleteAllArtists()
+    fun deleteAllArtists()
 
     @Query("SELECT * FROM artists")
-    suspend fun getArtists(): List<Artist>
+    fun getArtists(): List<Artist>
 }

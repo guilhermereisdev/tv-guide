@@ -9,11 +9,11 @@ import com.guilhermereisdev.tvguide.data.model.tvshow.TVShow
 @Dao
 interface TVShowDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveTVShows(tvShows: List<TVShow>)
+    fun saveTVShows(tvShows: List<TVShow>)
 
     @Query("DELETE FROM tvShows")
-    suspend fun deleteAllTVShows()
+    fun deleteAllTVShows()
 
     @Query("SELECT * FROM tvShows")
-    suspend fun getTVShows(): List<TVShow>
+    fun getTVShows(): List<TVShow>
 }
