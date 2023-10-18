@@ -19,6 +19,11 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "API_KEY", "\"547ae102e1ae0491794fde0140645abf\"")
+        buildConfigField(
+            "String",
+            "ACCESS_TOKEN",
+            "\"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDdhZTEwMmUxYWUwNDkxNzk0ZmRlMDE0MDY0NWFiZiIsInN1YiI6IjY1Mjc4OGMwZDM5OWU2MDEwMDNmOGU5YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.E5Ny-LjxgK-MOm0jaQ2xpLJUpCfZNi8ce-03ik8z_WE\""
+        )
     }
 
     buildTypes {
