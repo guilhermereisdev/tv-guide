@@ -12,12 +12,12 @@ class MovieRepositoryImpl(
     private val movieLocalDataSource: MovieLocalDataSource,
     private val movieCacheDataSource: MovieCacheDataSource,
 ) : MovieRepository {
-    override suspend fun getMovies(): List<Movie>? {
-        return getMoviesFromCache()
+    override suspend fun getMovies(language: String): List<Movie>? {
+        return getMoviesFromCache(language)
     }
 
-    override suspend fun updateMovies(): List<Movie>? {
-        val newListOfMovies = getMoviesFromAPI()
+    override suspend fun updateMovies(language: String): List<Movie>? {
+        val newListOfMovies = getMoviesFromAPI(language)
         movieLocalDataSource.clearAll()
         movieLocalDataSource.saveMoviesToDB(newListOfMovies)
         movieCacheDataSource.saveMoviesToCache(newListOfMovies)
@@ -25,11 +25,11 @@ class MovieRepositoryImpl(
         return newListOfMovies
     }
 
-    suspend fun getMoviesFromAPI(): List<Movie> {
+    private suspend fun getMoviesFromAPI(language: String): List<Movie> {
         lateinit var movieList: List<Movie>
 
         try {
-            val response = movieRemoteDataSource.getMovies()
+            val response = movieRemoteDataSource.getMovies(language)
             val body = response.body()
 
             if (body != null) {
@@ -42,8 +42,8 @@ class MovieRepositoryImpl(
         return movieList
     }
 
-    suspend fun getMoviesFromDB(): List<Movie> {
-        lateinit var movieList: List<Movie>
+    private suspend fun getMoviesFromDB(language: String): List<Movie> {
+        var movieList: List<Movie> = emptyList()
 
         try {
             movieList = movieLocalDataSource.getMoviesFromDB()
@@ -54,14 +54,14 @@ class MovieRepositoryImpl(
         if (movieList.isNotEmpty()) {
             return movieList
         } else {
-            movieList = getMoviesFromAPI()
+            movieList = getMoviesFromAPI(language)
             movieLocalDataSource.saveMoviesToDB(movieList)
         }
 
         return movieList
     }
 
-    suspend fun getMoviesFromCache(): List<Movie>? {
+    private suspend fun getMoviesFromCache(language: String): List<Movie>? {
         lateinit var movieList: List<Movie>
 
         try {
@@ -73,7 +73,7 @@ class MovieRepositoryImpl(
         if (movieList.isNotEmpty()) {
             return movieList
         } else {
-            movieList = getMoviesFromDB()
+            movieList = getMoviesFromDB(language)
             movieCacheDataSource.saveMoviesToCache(movieList)
         }
 
