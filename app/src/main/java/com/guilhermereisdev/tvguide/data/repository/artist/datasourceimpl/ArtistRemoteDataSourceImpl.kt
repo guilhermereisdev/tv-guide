@@ -9,9 +9,8 @@ import retrofit2.Response
 
 class ArtistRemoteDataSourceImpl(
     private val tmdbService: TMDBService,
-    private val apiKey: String,
     private val language: String = "pt-BR"
 ) : ArtistRemoteDataSource {
     override suspend fun getArtists(): Response<ArtistList> =
-        tmdbService.getPopularArtists(apiKey, language)
+        tmdbService.getPopularArtists(language)
 }
