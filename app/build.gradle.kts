@@ -24,6 +24,7 @@ android {
             "ACCESS_TOKEN",
             "\"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1NDdhZTEwMmUxYWUwNDkxNzk0ZmRlMDE0MDY0NWFiZiIsInN1YiI6IjY1Mjc4OGMwZDM5OWU2MDEwMDNmOGU5YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.E5Ny-LjxgK-MOm0jaQ2xpLJUpCfZNi8ce-03ik8z_WE\""
         )
+        buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
     }
 
     buildTypes {
