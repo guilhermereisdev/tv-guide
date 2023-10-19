@@ -4,5 +4,5 @@ import com.guilhermereisdev.tvguide.data.model.movie.Movie
 import com.guilhermereisdev.tvguide.domain.repository.MovieRepository
 
 class UpdateMoviesUseCase(private val movieRepository: MovieRepository) {
-    suspend fun execute(): List<Movie>? = movieRepository.updateMovies()
+    suspend fun execute(language: String): List<Movie>? = movieRepository.updateMovies(language)
 }

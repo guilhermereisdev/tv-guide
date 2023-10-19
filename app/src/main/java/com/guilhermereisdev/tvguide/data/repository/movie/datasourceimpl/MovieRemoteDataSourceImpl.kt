@@ -6,10 +6,8 @@ import com.guilhermereisdev.tvguide.data.repository.movie.datasource.MovieRemote
 import retrofit2.Response
 
 class MovieRemoteDataSourceImpl(
-    private val tmdbService: TMDBService,
-    private val apiKey: String,
-    private val language: String = "pt-BR"
+    private val tmdbService: TMDBService
 ) : MovieRemoteDataSource {
-    override suspend fun getMovies(): Response<MovieList> =
-        tmdbService.getPopularMovies(apiKey, language)
+    override suspend fun getMovies(language: String): Response<MovieList> =
+        tmdbService.getPopularMovies(language)
 }

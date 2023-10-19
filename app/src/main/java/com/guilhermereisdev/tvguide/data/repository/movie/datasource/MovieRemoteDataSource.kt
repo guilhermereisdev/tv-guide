@@ -4,5 +4,5 @@ import com.guilhermereisdev.tvguide.data.model.movie.MovieList
 import retrofit2.Response
 
 interface MovieRemoteDataSource {
-    suspend fun getMovies(): Response<MovieList>
+    suspend fun getMovies(language: String): Response<MovieList>
 }
