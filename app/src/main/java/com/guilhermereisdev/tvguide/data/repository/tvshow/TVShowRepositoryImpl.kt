@@ -43,7 +43,7 @@ class TVShowRepositoryImpl(
     }
 
     suspend fun getTVShowsFromDB(): List<TVShow> {
-        lateinit var tvShowList: List<TVShow>
+        var tvShowList: List<TVShow> = emptyList()
 
         try {
             tvShowList = tvShowLocalDataSource.getTVShowsFromDB()
