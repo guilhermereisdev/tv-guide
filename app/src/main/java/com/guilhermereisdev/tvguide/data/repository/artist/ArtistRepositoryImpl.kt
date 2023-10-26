@@ -43,7 +43,7 @@ class ArtistRepositoryImpl(
     }
 
     suspend fun getArtistsFromDB(): List<Artist> {
-        lateinit var artistList: List<Artist>
+        var artistList: List<Artist> = emptyList()
 
         try {
             artistList = artistLocalDataSource.getArtistsFromDB()
