@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.guilhermereisdev.tvguide.R
 import com.guilhermereisdev.tvguide.databinding.ActivityTvshowBinding
 import com.guilhermereisdev.tvguide.presentation.di.Injector
-import com.guilhermereisdev.tvguide.presentation.movie.MovieViewModel
 import javax.inject.Inject
 
 class TVShowActivity : AppCompatActivity() {
@@ -96,5 +95,4 @@ class TVShowActivity : AppCompatActivity() {
                 binding.tvShowProgressBar.visibility = View.GONE
         }
     }
-
 }
