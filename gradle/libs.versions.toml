@@ -19,6 +19,8 @@ logging-interceptor = "4.11.0"
 glide = "4.16.0"
 coroutines-test = "1.2.1"
 truth = "1.1.4"
+robolectric = "4.9"
+guava = "32.0.1-android"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -45,6 +47,8 @@ gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref 
 logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "logging-interceptor" }
 glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 truth = { group = "com.google.truth", name = "truth", version.ref = "truth"}
+robolectric = { group = "org.robolectric", name = "robolectric", version.ref = "robolectric"}
+guava = { group = "com.google.guava", name = "guava", version.ref = "guava"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
